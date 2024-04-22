@@ -57,7 +57,7 @@ namespace eUseControl.Web.Controllers
 
             return View(u3);
         }
-
+        [AdminMode]
         public ActionResult Contact()
         {
             ViewBag.AdminMessage = "Welcome Admin!";
