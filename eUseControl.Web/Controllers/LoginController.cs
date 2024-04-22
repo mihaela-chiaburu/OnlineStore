@@ -30,8 +30,41 @@ namespace eUseControl.Web.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
         //Post: Login
-        /**/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(UserLogin login)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<UserLogin, ULoginData>());
+                var data = Mapper.Map<ULoginData>(login);
+
+                data.LoginIp = Request.UserHostAddress;
+                data.LoginDateTime = DateTime.Now;
+
+                var userLogin = _session.UserLogin(data);
+                if (userLogin.Status)
+                {
+                    HttpCookie cookie = _session.GenCookie(login.Credential);
+                    ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", userLogin.StatusMsg);
+                    return View();
+                }
+            }
+
+            return View();
+        }
+
+        public ActionResult Login(UserLogin data)
+        {
+            return View();
+        }
     }
 }
