@@ -1,0 +1,24 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/Images/bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 80vh;
+}
+
+.login-form {
+    width: 450px;
+    padding: 20px;
+    border: 1px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}

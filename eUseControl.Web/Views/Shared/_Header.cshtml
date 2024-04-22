@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "_Header";
+}
+
+<!-- header section strats -->
+<nav class="navbar navbar-expand-lg custom_nav-container ">
+    <a class="navbar-brand" href="index.html">
+        <span>
+            Giftos
+        </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  ">
+            <li class="nav-item active">
+                <a class="nav-link" href="@Url.Action("Index", "Home")">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Shop", "Home")">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Why", "Home")">Why us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Testimonial", "Home")">Testimonial</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Contact", "Home")">Contact us</a>
+            </li>
+        </ul>
+        <div class="user_option">
+            <a href="">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span>
+                    Login
+                </span>
+            </a>
+            <a href="">
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            </a>
+            <form class="form-inline ">
+                <button class="btn nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+<!-- end header section -->
